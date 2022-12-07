@@ -1,30 +1,24 @@
 import './App.css'
-import { FormEvent } from 'react'
+import { Route, Routes } from 'react-router-dom'
+import { LoginPage } from './pages/LoginPage'
+import { OrderPage } from './pages/OrderPage'
+import { ErrorPage } from './pages/ErrorPage'
+
+export enum AppRoutes {
+  HOME = '/',
+  ORDER = '/order/',
+  ERROR = '*',
+}
+
 
 function App() {
-  function sayHello(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    // @ts-ignore
-    const name = e.target[0].value
-    console.log(name)
-    alert('Wesh ' + name)
-  }
-
   return (
     <div className="App">
-      <h1>Bienvenue chez nous !</h1>
-      <br />
-      <h2>Connectez-vous</h2>
-
-      <form onSubmit={sayHello}>
-        <input
-          type="text"
-          name="firstName"
-          placeholder="Entrez votre prénom..."
-          required
-        />
-        <button>Accédez à votre espace</button>
-      </form>
+      <Routes>
+        <Route path={AppRoutes.HOME} element={<LoginPage />} />
+        <Route path={AppRoutes.ORDER + ':firstName'} element={<OrderPage />} />
+        <Route path={AppRoutes.ERROR} element={<ErrorPage />} />
+      </Routes>
     </div>
   )
 }
