@@ -1,6 +1,5 @@
-import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import { LoginPage } from './pages/LoginPage'
+import { LoginPage } from './pages/login/LoginPage'
 import { OrderPage } from './pages/OrderPage'
 import { ErrorPage } from './pages/ErrorPage'
 
@@ -9,7 +8,6 @@ export enum AppRoutes {
   ORDER = '/order/',
   ERROR = '*',
 }
-
 
 function App() {
   return (
