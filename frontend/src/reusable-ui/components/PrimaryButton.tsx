@@ -1,21 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
-import { THEME } from '../design-system'
+import { T } from '../design-system'
 
 type PrimaryButtonProps = {
-  label: string,
-  icon?: JSX.Element,
+  label: string
+  icon?: JSX.Element
 }
-export function PrimaryButton({ label, icon}: PrimaryButtonProps) {
-  return <PrimaryButtonStyled>
-    {label} {icon}
-  </PrimaryButtonStyled>
+export function PrimaryButton({ label, icon }: PrimaryButtonProps) {
+  return (
+    <PrimaryButtonStyled>
+      {label} {icon}
+    </PrimaryButtonStyled>
+  )
 }
 
 const PrimaryButtonStyled = styled.button`
-  background-color: ${THEME.colors.primary};
+  background-color: ${T.colors.primary};
   width: 100%;
-  
+
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -23,28 +25,28 @@ const PrimaryButtonStyled = styled.button`
   white-space: nowrap;
   text-decoration: none;
   line-height: 1;
-  
-  padding: ${THEME.spacing.md} ${THEME.spacing.md};
+
+  padding: ${T.spacing.md} ${T.spacing.md};
   border-radius: 5px;
-  font-size: ${THEME.fonts.size.P0};
-  font-weight: ${THEME.fonts.weights.heavy};
-  color: ${THEME.colors.white};
-  background-color: ${THEME.colors.primary};
-  border: 1px solid ${THEME.colors.primary};
-  
+  font-size: ${T.fonts.size.P0};
+  font-weight: ${T.fonts.weights.heavy};
+  color: ${T.colors.white};
+  background-color: ${T.colors.primary};
+  border: 1px solid ${T.colors.primary};
+
   &:hover:not(:disabled) {
-    background-color: ${THEME.colors.white};
-    color: ${THEME.colors.primary};
-    border: 1px solid ${THEME.colors.primary};
+    background-color: ${T.colors.white};
+    color: ${T.colors.primary};
+    border: 1px solid ${T.colors.primary};
     transition: all 200ms ease-out;
   }
-  
+
   &:active {
-    color: ${THEME.colors.white};
-    background-color: ${THEME.colors.primary};
-    border: 1px solid ${THEME.colors.primary};
+    color: ${T.colors.white};
+    background-color: ${T.colors.primary};
+    border: 1px solid ${T.colors.primary};
   }
-  
+
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;

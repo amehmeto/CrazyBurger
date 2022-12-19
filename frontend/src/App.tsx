@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import { LoginPage } from './pages/login/LoginPage'
-import { OrderPage } from './pages/OrderPage'
+import { OrderPage } from './pages/order/OrderPage'
 import { ErrorPage } from './pages/ErrorPage'
 
 export enum AppRoutes {
@@ -11,13 +11,11 @@ export enum AppRoutes {
 
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path={AppRoutes.HOME} element={<LoginPage />} />
-        <Route path={AppRoutes.ORDER + ':firstName'} element={<OrderPage />} />
-        <Route path={AppRoutes.ERROR} element={<ErrorPage />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path={AppRoutes.HOME} element={<LoginPage />} />
+      <Route path={AppRoutes.ORDER + ':firstName'} element={<OrderPage />} />
+      <Route path={AppRoutes.ERROR} element={<ErrorPage />} />
+    </Routes>
   )
 }
 

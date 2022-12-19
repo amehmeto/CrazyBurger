@@ -6,7 +6,7 @@ import { LoginForm } from './components/LoginForm'
 export function LoginPage() {
   return (
     <LoginPageStyled>
-      <CrazeeBurgerLogo />
+      <CrazeeBurgerLogo className={'login-page-logo'} />
       <LoginForm />
     </LoginPageStyled>
   )
@@ -18,11 +18,11 @@ const LoginPageStyled = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
   ::before {
     content: '';
     background: url('../../../src/assets/burger-background.jpg')
-    rgba(0, 0, 0, 0.7) center;
+      rgba(0, 0, 0, 0.7) center;
     background-size: cover;
     background-blend-mode: darken;
 
@@ -32,5 +32,9 @@ const LoginPageStyled = styled.div`
     right: 0;
     bottom: 0;
     z-index: -1;
+  }
+
+  .login-page-logo {
+    transform: scale(2.5);
   }
 `

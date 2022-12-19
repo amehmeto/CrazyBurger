@@ -16,10 +16,11 @@ const colors = {
   greySemiDark: '#93a2b1',
   greyDark: '#6f737e',
   greyBlue: '#747b91',
-  loginLine: "#f56a2c",
+  loginLine: '#f56a2c',
 }
 
 const spacing = {
+  none: 0,
   xxs: '4px',
   xs: '8px',
   sm: '12px',
@@ -31,16 +32,16 @@ const spacing = {
 
 const fonts = {
   size: {
-    XXXS: "8px",
-    XXS: "10px",
-    XS: "12px",
-    P0: "15px",
-    P1: "18px",
-    P2: "20px",
-    P3: "24px",
-    P4: "36px",
-    P5: "48px",
-    P6: "60px",
+    XXXS: '8px',
+    XXS: '10px',
+    XS: '12px',
+    P0: '15px',
+    P1: '18px',
+    P2: '20px',
+    P3: '24px',
+    P4: '36px',
+    P5: '48px',
+    P6: '60px',
   },
   weights: {
     light: 300,
@@ -51,7 +52,8 @@ const fonts = {
     heavy: 800,
   },
   family: {
-    AMATIC_SC: 'Amatic SC'
+    AMATIC_SC: 'Amatic SC',
+    OPEN_SANS: 'Open Sans',
   },
 }
 const gridUnit = 8
@@ -73,7 +75,7 @@ const weights = {
   heavy: 800,
 }
 
-export const THEME = {
+export const T = {
   colors,
   fonts,
   gridUnit,

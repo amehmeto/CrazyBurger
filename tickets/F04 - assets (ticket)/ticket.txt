@@ -1,0 +1,23 @@
+(3) F04 : Création de la navbar (AVEC CSS)
+
+Règles métiers:
+Respecter le style de la maquette uniquement pour la navbar
+À droite : 
+Ajouter icône profil
+Ajouter "Hey, " suivi du nom de l'utilisateur qui s'est authentifié
+Quand je clique sur "Se déconnecter", je dois pouvoir être renvoyé sur la page Login
+À gauche :
+Ajouter logo "Crazee Burger"
+Quand je clique sur le logo, on constate un rechargement de la page (comme un rechargement classique)
+Pour l'instant :
+L'arrière plan doit être en orange simple (sans motif) : #FF9F1A (color "primary")
+Ignorer le menu, le panier et le bouton admin (ils seront traités plus tard)
+
+Assets :
+Maquette de la navbar (à télécharger ci-dessous)
+Maquette finale (donnée à titre indicatif)
+font-family: "Open Sans", sans-serif;
+Info pour le "main" qui est juste en dessous de la navbar :
+background: #F5F5F7;
+box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset ;
+border-radius: 0px 0px 15px 15px;
