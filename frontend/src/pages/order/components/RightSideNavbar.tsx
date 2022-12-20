@@ -26,8 +26,8 @@ const RightSideNavbarStyled = styled.div`
   justify-content: flex-end;
   align-items: center;
 
-  font-family: ${T.fonts.family.OPEN_SANS}, sans-serif;
   color: ${T.colors.greyDark};
+  padding-right: ${T.spacing.xl};
 
   span {
     font-weight: bold;
@@ -47,11 +47,15 @@ const RightSideNavbarStyled = styled.div`
     text-decoration: none;
     font-size: ${T.fonts.size.P0};
     color: ${T.colors.greyDark};
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   .profilIcon {
     margin-left: ${T.spacing.xs};
-    height: 60px;
-    width: 60px;
+    height: 36px;
+    width: 36px;
   }
 `

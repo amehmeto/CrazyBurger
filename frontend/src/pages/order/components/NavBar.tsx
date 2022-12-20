@@ -4,9 +4,13 @@ import { CrazeeBurgerLogo } from '../../login/components/CrazeeBurgerLogo'
 import { RightSideNavbar } from './RightSideNavbar'
 
 export function NavBar(props: { firstName: any }) {
+  function reloadPage() {
+    return () => window.location.reload()
+  }
+
   return (
     <NavbarStyled>
-      <CrazeeBurgerLogo />
+      <CrazeeBurgerLogo onClick={reloadPage()} />
 
       <RightSideNavbar firstName={props.firstName} />
     </NavbarStyled>

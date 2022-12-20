@@ -3,10 +3,11 @@ import { T } from '../../../reusable-ui/design-system'
 
 type CrazyBurgerLogoProps = {
   className?: string
+  onClick?: () => void
 }
-export function CrazeeBurgerLogo({ className }: CrazyBurgerLogoProps) {
+export function CrazeeBurgerLogo({ className, onClick }: CrazyBurgerLogoProps) {
   return (
-    <LogoStyled className={className}>
+    <LogoStyled className={className} onClick={onClick}>
       <h1>Crazee</h1>
       <img src="../../../../src/assets/logo-orange.png" alt="logo burger" />
       <h1>Burger</h1>
