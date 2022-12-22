@@ -26,4 +26,8 @@ const MainStyled = styled.div`
   box-shadow: 0 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
   border-radius: 0 0 ${THEME.borderRadius.extraRound}
     ${THEME.borderRadius.extraRound};
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  overflow: scroll;
 `
