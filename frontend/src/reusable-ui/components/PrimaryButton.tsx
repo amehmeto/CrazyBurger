@@ -5,10 +5,11 @@ import { THEME } from '../design-system'
 type PrimaryButtonProps = {
   label: string
   icon?: JSX.Element
+  className?: string
 }
-export function PrimaryButton({ label, icon }: PrimaryButtonProps) {
+export function PrimaryButton({ label, icon, className }: PrimaryButtonProps) {
   return (
-    <PrimaryButtonStyled>
+    <PrimaryButtonStyled className={className}>
       {label} {icon}
     </PrimaryButtonStyled>
   )

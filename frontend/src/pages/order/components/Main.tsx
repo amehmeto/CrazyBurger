@@ -4,8 +4,10 @@ import { MenuItemsGateway } from '../gateways/MenuItemsGateway'
 import { FakeMenuItemsGateway } from '../gateways/FakeMenuItemsGateway'
 import { useEffect, useState } from 'react'
 import { MenuItems } from '../models/MenuItems'
+import { MenuItemCard } from './MenuItemCard'
 
 const menuItemsGateway: MenuItemsGateway = new FakeMenuItemsGateway()
+
 export function Main() {
   const [menuItems, setMenuItems] = useState<MenuItems[]>([])
 
@@ -13,11 +15,7 @@ export function Main() {
     menuItemsGateway.getAll().then((_menuItems) => setMenuItems(_menuItems))
   }, [])
 
-  const menuItemsCards = menuItems.map((item) => (
-    <div>
-      <p>{item.title}</p>
-    </div>
-  ))
+  const menuItemsCards = menuItems.map((item) => <MenuItemCard item={item} />)
 
   return <MainStyled className="main">{menuItemsCards}</MainStyled>
 }
