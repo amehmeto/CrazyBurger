@@ -1,8 +1,25 @@
 import styled from 'styled-components'
 import { THEME } from '../../../reusable-ui/design-system'
+import { MenuItemsGateway } from '../gateways/MenuItemsGateway'
+import { FakeMenuItemsGateway } from '../gateways/FakeMenuItemsGateway'
+import { useEffect, useState } from 'react'
+import { MenuItems } from '../models/MenuItems'
 
+const menuItemsGateway: MenuItemsGateway = new FakeMenuItemsGateway()
 export function Main() {
-  return <MainStyled className="main"></MainStyled>
+  const [menuItems, setMenuItems] = useState<MenuItems[]>([])
+
+  useEffect(() => {
+    menuItemsGateway.getAll().then((_menuItems) => setMenuItems(_menuItems))
+  }, [])
+
+  const menuItemsCards = menuItems.map((item) => (
+    <div>
+      <p>{item.title}</p>
+    </div>
+  ))
+
+  return <MainStyled className="main">{menuItemsCards}</MainStyled>
 }
 
 const MainStyled = styled.div`
