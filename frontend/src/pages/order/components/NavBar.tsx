@@ -4,7 +4,7 @@ import { CrazeeBurgerLogo } from '../../login/components/CrazeeBurgerLogo'
 import { RightSideNavbar } from './RightSideNavbar'
 
 type NavBarProps = {
-  firstName: string
+  firstName: string | undefined
 }
 export function NavBar({ firstName }: NavBarProps) {
   function reloadPage() {

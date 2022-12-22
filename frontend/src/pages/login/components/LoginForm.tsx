@@ -41,6 +41,7 @@ export function LoginForm() {
 
 const LoginFormStyled = styled.div`
   font-family: ${THEME.fonts.family.AMATIC_SC}, cursive;
+  text-align: center;
 
   h1 {
     color: ${THEME.colors.white};
@@ -54,7 +55,7 @@ const LoginFormStyled = styled.div`
   }
 
   hr {
-    background-color: ${THEME.colors.loginLine};
-    border: 1.5px solid ${THEME.gridUnit * 5};
+    border: 1.5px solid ${THEME.colors.loginLine};
+    margin-bottom: ${THEME.gridUnit * 5};
   }
 `

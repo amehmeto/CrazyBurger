@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { THEME } from '../../../reusable-ui/design-system'
 
 type RightSideNavbarProps = {
-  firstName: string
+  firstName: string | undefined
 }
 
 export function RightSideNavbar({ firstName }: RightSideNavbarProps) {
@@ -13,10 +13,10 @@ export function RightSideNavbar({ firstName }: RightSideNavbarProps) {
     <RightSideNavbarStyled className="rightSide">
       <div className="textContainer">
         <p className="welcomePhrase">
-          Hey, <span>{firstName}</span>
+          Hey, <span>{firstName ?? 'Anonymous'}</span>
         </p>
         <Link className="logout" to={AppRoutes.HOME}>
-          Se déconnecter
+          <small>Se déconnecter</small>
         </Link>
       </div>
       <BsPersonCircle className="profilIcon" />
@@ -41,7 +41,12 @@ const RightSideNavbarStyled = styled.div`
   .textContainer {
     display: flex;
     flex-direction: column;
+
+    & > p {
+      text-align: right;
+    }
   }
+
   .welcomePhrase {
     margin: 0;
     font-size: ${THEME.fonts.size.P1};
