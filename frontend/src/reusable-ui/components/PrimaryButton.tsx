@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { T } from '../design-system'
+import { THEME } from '../design-system'
 
 type PrimaryButtonProps = {
   label: string
@@ -15,7 +15,7 @@ export function PrimaryButton({ label, icon }: PrimaryButtonProps) {
 }
 
 const PrimaryButtonStyled = styled.button`
-  background-color: ${T.colors.primary};
+  background-color: ${THEME.colors.primary};
   width: 100%;
 
   display: inline-flex;
@@ -26,25 +26,25 @@ const PrimaryButtonStyled = styled.button`
   text-decoration: none;
   line-height: 1;
 
-  padding: ${T.spacing.md} ${T.spacing.md};
+  padding: ${THEME.spacing.md} ${THEME.spacing.md};
   border-radius: 5px;
-  font-size: ${T.fonts.size.P0};
-  font-weight: ${T.fonts.weights.heavy};
-  color: ${T.colors.white};
-  background-color: ${T.colors.primary};
-  border: 1px solid ${T.colors.primary};
+  font-size: ${THEME.fonts.size.P0};
+  font-weight: ${THEME.fonts.weights.heavy};
+  color: ${THEME.colors.white};
+  background-color: ${THEME.colors.primary};
+  border: 1px solid ${THEME.colors.primary};
 
   &:hover:not(:disabled) {
-    background-color: ${T.colors.white};
-    color: ${T.colors.primary};
-    border: 1px solid ${T.colors.primary};
+    background-color: ${THEME.colors.white};
+    color: ${THEME.colors.primary};
+    border: 1px solid ${THEME.colors.primary};
     transition: all 200ms ease-out;
   }
 
   &:active {
-    color: ${T.colors.white};
-    background-color: ${T.colors.primary};
-    border: 1px solid ${T.colors.primary};
+    color: ${THEME.colors.white};
+    background-color: ${THEME.colors.primary};
+    border: 1px solid ${THEME.colors.primary};
   }
 
   &:disabled {

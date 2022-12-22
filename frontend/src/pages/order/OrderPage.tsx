@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import { NavBar } from './components/NavBar'
 import styled from 'styled-components'
 import { Main } from './components/Main'
-import { T } from '../../reusable-ui/design-system'
+import { THEME } from '../../reusable-ui/design-system'
 
 export function OrderPage() {
   const { firstName } = useParams()
@@ -18,7 +18,7 @@ export function OrderPage() {
 }
 
 const OrderPageStyled = styled.div`
-  background-color: ${T.colors.primary};
+  background-color: ${THEME.colors.primary};
   height: 100vh;
 
   display: flex;

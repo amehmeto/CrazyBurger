@@ -1,6 +1,6 @@
 import React, { FormEvent } from 'react'
 import styled from 'styled-components'
-import { T } from '../../../reusable-ui/design-system'
+import { THEME } from '../../../reusable-ui/design-system'
 import { useNavigate } from 'react-router-dom'
 import { AppRoutes } from '../../../App'
 import { PrimaryButton } from '../../../reusable-ui/components/PrimaryButton'
@@ -40,21 +40,21 @@ export function LoginForm() {
 }
 
 const LoginFormStyled = styled.div`
-  font-family: ${T.fonts.family.AMATIC_SC}, cursive;
+  font-family: ${THEME.fonts.family.AMATIC_SC}, cursive;
 
   h1 {
-    color: ${T.colors.white};
-    font-size: ${T.fonts.size.P5};
+    color: ${THEME.colors.white};
+    font-size: ${THEME.fonts.size.P5};
   }
 
   h2 {
-    color: ${T.colors.white};
-    margin: ${T.spacing.md} ${T.spacing.sm} ${T.spacing.sm};
-    font-size: ${T.fonts.size.P4};
+    color: ${THEME.colors.white};
+    margin: ${THEME.spacing.md} ${THEME.spacing.sm} ${THEME.spacing.sm};
+    font-size: ${THEME.fonts.size.P4};
   }
 
   hr {
-    background-color: ${T.colors.loginLine};
-    border: 1.5px solid ${T.gridUnit * 5};
+    background-color: ${THEME.colors.loginLine};
+    border: 1.5px solid ${THEME.gridUnit * 5};
   }
 `

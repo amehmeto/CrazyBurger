@@ -75,7 +75,7 @@ const weights = {
   heavy: 800,
 }
 
-export const T = {
+export const THEME = {
   colors,
   fonts,
   gridUnit,

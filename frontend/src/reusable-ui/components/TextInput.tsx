@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { T } from '../design-system'
+import { THEME } from '../design-system'
 
 type TextInputProps = {
-  onChange?: () => void
+  onChange?: (e: React.FormEvent<HTMLInputElement>) => void
   icon?: JSX.Element
   name?: string
   placeholder?: string
@@ -30,31 +30,31 @@ export function TextInput({
 }
 
 const TextInputStyled = styled.div`
-  background-color: ${T.colors.white};
-  border-radius: ${T.borderRadius.round};
+  background-color: ${THEME.colors.white};
+  border-radius: ${THEME.borderRadius.round};
   display: flex;
   align-items: center;
 
-  padding: ${T.spacing.md} ${T.spacing.md};
+  padding: ${THEME.spacing.md} ${THEME.spacing.md};
 
   .icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: ${T.fonts.size.P0};
-    color: ${T.colors.greySemiDark};
-    margin-right: ${T.spacing.xs};
+    font-size: ${THEME.fonts.size.P0};
+    color: ${THEME.colors.greySemiDark};
+    margin-right: ${THEME.spacing.xs};
   }
 
   input {
-    font-size: ${T.fonts.size.P0};
-    color: ${T.colors.dark};
+    font-size: ${THEME.fonts.size.P0};
+    color: ${THEME.colors.dark};
     border: none;
     width: 100%;
 
     &::placeholder {
-      background: ${T.colors.white};
-      color: ${T.colors.greyMedium};
+      background: ${THEME.colors.white};
+      color: ${THEME.colors.greyMedium};
     }
   }
 `
