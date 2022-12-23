@@ -34,25 +34,24 @@ export function MenuItemCard({ item }: MenuItemsCardProps) {
 }
 
 const MenuItemCardStyled = styled.div`
-  height: 330px;
-  width: 240px;
+  height: 300px;
+  width: 200px;
   background-color: ${THEME.colors.white};
   border-radius: ${THEME.borderRadius.extraRound};
   padding: ${THEME.spacing.md};
-  margin: ${THEME.spacing.md};
-  box-shadow: 0 8px 20px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: -8px 8px 20px 0 rgba(0, 0, 0, 0.2);
 
   display: flex;
   flex-direction: column;
   justify-content: end;
 
   img {
-    display: block;
-    margin: 0 auto;
-    max-width: 200px;
-    height: 145px;
+    margin: 0 auto 30px;
+    width: 100%;
+    max-height: 145px;
     object-fit: contain;
     flex-grow: 1;
+    justify-self: center;
   }
 
   p {
@@ -67,17 +66,20 @@ const MenuItemCardStyled = styled.div`
 
   .price {
     color: ${THEME.colors.primary};
-    font-size: ${THEME.fonts.size.P3};
+    font-size: ${THEME.fonts.size.P1};
   }
 
   .priceLine {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: ${THEME.spacing.sm} 0;
+    padding: ${THEME.spacing.sm} 0 0 0;
   }
 
   .addItem {
-    width: 120px;
+    font-size: ${THEME.fonts.size.XS};
+    cursor: pointer;
+    padding: 12px;
+    width: 50%;
   }
 `

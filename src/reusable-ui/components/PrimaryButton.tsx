@@ -27,7 +27,7 @@ const PrimaryButtonStyled = styled.button`
   text-decoration: none;
   line-height: 1;
 
-  padding: ${THEME.spacing.md} ${THEME.spacing.md};
+  padding: 18px 24px;
   border-radius: ${THEME.borderRadius.round};
   font-size: ${THEME.fonts.size.P0};
   font-weight: ${THEME.fonts.weights.heavy};

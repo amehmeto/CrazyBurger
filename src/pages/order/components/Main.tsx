@@ -15,7 +15,9 @@ export function Main() {
     menuItemsGateway.getAll().then((_menuItems) => setMenuItems(_menuItems))
   }, [])
 
-  const menuItemsCards = menuItems.map((item) => <MenuItemCard item={item} />)
+  const menuItemsCards = menuItems.map((item) => (
+    <MenuItemCard key={item.id} item={item} />
+  ))
 
   return <MainStyled className="main">{menuItemsCards}</MainStyled>
 }
@@ -26,8 +28,11 @@ const MainStyled = styled.div`
   box-shadow: 0 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
   border-radius: 0 0 ${THEME.borderRadius.extraRound}
     ${THEME.borderRadius.extraRound};
+  padding: 50px 50px 150px;
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  overflow: scroll;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 60px;
+  justify-items: center;
+  overflow-y: scroll;
 `
