@@ -19,8 +19,9 @@ export function LoginForm() {
   return (
     <LoginFormStyled>
       <h1>Bienvenue chez nous !</h1>
+
       <hr />
-      <h1>Connectez-vous</h1>
+      <h2>Connectez-vous</h2>
 
       <form onSubmit={accessPrivateSpace}>
         <TextInput
@@ -40,6 +41,7 @@ export function LoginForm() {
 }
 
 const LoginFormStyled = styled.div`
+  width: 500px;
   font-family: ${THEME.fonts.family.AMATIC_SC}, cursive;
   text-align: center;
 
