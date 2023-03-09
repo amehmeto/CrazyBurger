@@ -3,8 +3,9 @@ import { THEME } from '../../../reusable-ui/design-system'
 import { Profil } from './Profil'
 import ToggleButton from '../../../reusable-ui/components/ToggleButton'
 import { useState } from 'react'
-import { toast, ToastContainer, ToastOptions } from 'react-toastify'
+import { toast, ToastOptions } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { AdminToast } from './AdminToast'
 
 type RightSideNavbarProps = {
   firstName: string | undefined
@@ -24,7 +25,7 @@ export function RightSideNavbar({ firstName }: RightSideNavbarProps) {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-    } as ToastOptions<{}>
+    } as ToastOptions
     toast.info(notificationMessage, options)
   }
 
@@ -42,7 +43,7 @@ export function RightSideNavbar({ firstName }: RightSideNavbarProps) {
         uncheckedLabel="Activer le mode admin"
       />
 
-      <ToastContainer />
+      <AdminToast />
 
       <Profil firstName={firstName} />
     </RightSideNavbarStyled>

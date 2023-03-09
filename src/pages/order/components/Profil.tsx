@@ -25,7 +25,6 @@ export function Profil({ firstName }: ProfilProps) {
 }
 
 const ProfilStyled = styled.div`
-  border: red 1px solid;
   display: flex;
 
   margin-left: ${THEME.spacing.xl};
