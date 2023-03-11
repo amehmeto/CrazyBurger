@@ -34,6 +34,7 @@ export function MenuItemCard({ item }: MenuItemsCardProps) {
 }
 
 const MenuItemCardStyled = styled.div`
+  margin: 0 auto;
   height: 300px;
   width: 200px;
   background-color: ${THEME.colors.white};

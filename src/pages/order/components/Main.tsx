@@ -1,10 +1,9 @@
-import styled from 'styled-components'
-import { THEME } from '../../../reusable-ui/design-system'
 import { MenuItemsGateway } from '../gateways/MenuItemsGateway'
 import { FakeMenuItemsGateway } from '../gateways/FakeMenuItemsGateway'
 import { useEffect, useState } from 'react'
 import { MenuItems } from '../models/MenuItems'
 import { MenuItemCard } from './MenuItemCard'
+import { AdminPanel } from './AdminPanel'
 
 const menuItemsGateway: MenuItemsGateway = new FakeMenuItemsGateway()
 
@@ -19,20 +18,15 @@ export function Main() {
     <MenuItemCard key={item.id} item={item} />
   ))
 
-  return <MainStyled className="main">{menuItemsCards}</MainStyled>
+  return (
+    <div className={container}>
+      <div className={itemListGrid}>{menuItemsCards}</div>
+      <AdminPanel />
+    </div>
+  )
 }
 
-const MainStyled = styled.div`
-  background-color: ${THEME.colors.background_white};
-  flex: 1;
-  box-shadow: 0 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
-  border-radius: 0 0 ${THEME.borderRadius.extraRound}
-    ${THEME.borderRadius.extraRound};
-  padding: 50px 50px 150px;
-
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-row-gap: 60px;
-  justify-items: center;
-  overflow-y: scroll;
-`
+const container =
+  'main h-5/6 w-full relative flex flex-col justify-between border border-red-500'
+const itemListGrid =
+  'w-full h-full bg-white flex shadow pt-8 px-8 grid grid-cols-4 gap-y-2 justify-center overflow-y-scroll'
