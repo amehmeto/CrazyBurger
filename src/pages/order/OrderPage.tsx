@@ -3,17 +3,21 @@ import { NavBar } from './components/NavBar'
 import styled from 'styled-components'
 import { Main } from './components/Main'
 import { THEME } from '../../reusable-ui/design-system'
+import { OrderContext, useOrderContextValue } from './OrderContext'
 
 export function OrderPage() {
   const { firstName } = useParams()
+  const orderContextValue = useOrderContextValue()
 
   return (
-    <OrderPageStyled>
-      <div className={'container'}>
-        <NavBar firstName={firstName} />
-        <Main />
-      </div>
-    </OrderPageStyled>
+    <OrderContext.Provider value={orderContextValue}>
+      <OrderPageStyled>
+        <div className={'container'}>
+          <NavBar firstName={firstName} />
+          <Main />
+        </div>
+      </OrderPageStyled>
+    </OrderContext.Provider>
   )
 }
 

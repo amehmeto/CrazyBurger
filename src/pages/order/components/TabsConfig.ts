@@ -4,8 +4,6 @@ import {
   MdModeEditOutline,
 } from 'react-icons/all'
 import { IconType } from 'react-icons'
-import { toast } from 'react-toastify'
-import isActive = toast.isActive
 
 export type TabConfig = {
   id: number
@@ -17,7 +15,7 @@ export type TabConfig = {
 export const tabsConfig: TabConfig[] = [
   {
     id: 0,
-    ariaLabel: 'ChevronDown',
+    ariaLabel: 'Réduire / Ouvrir',
     Icon: FiChevronDown,
     label: null,
     isActive: false,
@@ -26,7 +24,7 @@ export const tabsConfig: TabConfig[] = [
     id: 1,
     Icon: AiOutlinePlus,
     label: 'Ajouter un produit',
-    isActive: true,
+    isActive: true, // by default
   },
   {
     id: 2,

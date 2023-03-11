@@ -1,14 +1,16 @@
 import { MenuItemsGateway } from '../gateways/MenuItemsGateway'
 import { FakeMenuItemsGateway } from '../gateways/FakeMenuItemsGateway'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { MenuItems } from '../models/MenuItems'
 import { MenuItemCard } from './MenuItemCard'
 import { AdminPanel } from './AdminPanel'
+import { OrderContext } from '../OrderContext'
 
 const menuItemsGateway: MenuItemsGateway = new FakeMenuItemsGateway()
 
 export function Main() {
   const [menuItems, setMenuItems] = useState<MenuItems[]>([])
+  const { isModeAdmin } = useContext(OrderContext)
 
   useEffect(() => {
     menuItemsGateway.getAll().then((_menuItems) => setMenuItems(_menuItems))
@@ -21,7 +23,7 @@ export function Main() {
   return (
     <div className={container}>
       <div className={itemListGrid}>{menuItemsCards}</div>
-      <AdminPanel />
+      {isModeAdmin && <AdminPanel />}
     </div>
   )
 }

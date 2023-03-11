@@ -1,14 +1,14 @@
-import React, { MouseEvent, useState } from 'react'
+import React, { MouseEvent, useContext } from 'react'
 import { TabHead } from './TabHead'
-import { TabConfig, tabsConfig } from './tabsConfig'
 import { FiChevronDown, FiChevronUp } from 'react-icons/all'
+import { OrderContext } from '../OrderContext'
 
 export function AdminPanel() {
-  const [tabs, useTabs] = useState<TabConfig[]>(tabsConfig)
+  const { tabs, setTabs } = useContext(OrderContext)
 
   function selectTab(e: MouseEvent<HTMLButtonElement>, id: number) {
     e.preventDefault()
-    useTabs((prevTabs) =>
+    setTabs((prevTabs) =>
       prevTabs.map((tab) => ({
         ...tab,
         isActive: tab.id === id,

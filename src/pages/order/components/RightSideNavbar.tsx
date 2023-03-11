@@ -2,18 +2,18 @@ import styled from 'styled-components'
 import { THEME } from '../../../reusable-ui/design-system'
 import { Profil } from './Profil'
 import ToggleButton from '../../../reusable-ui/components/ToggleButton'
-import { useState } from 'react'
+import { useContext } from 'react'
 import { toast, ToastOptions } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { AdminToast } from './AdminToast'
+import { OrderContext } from '../OrderContext'
 
 type RightSideNavbarProps = {
   firstName: string | undefined
 }
 
 export function RightSideNavbar({ firstName }: RightSideNavbarProps) {
-  const [isModeAdmin, setIsModeAdmin] = useState<boolean>(false)
-
+  const { isModeAdmin, setIsModeAdmin } = useContext(OrderContext)
   function notifyEnteredAdminMode() {
     const notificationMessage = 'Mode admin activé'
     const options = {
