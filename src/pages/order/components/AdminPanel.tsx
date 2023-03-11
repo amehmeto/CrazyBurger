@@ -1,6 +1,7 @@
 import React, { MouseEvent, useState } from 'react'
 import { TabHead } from './TabHead'
 import { TabConfig, tabsConfig } from './tabsConfig'
+import { FiChevronDown, FiChevronUp } from 'react-icons/all'
 
 export function AdminPanel() {
   const [tabs, useTabs] = useState<TabConfig[]>(tabsConfig)
@@ -15,19 +16,30 @@ export function AdminPanel() {
     )
   }
 
-  const tabHeadElements = tabs.map((tab) => (
-    <TabHead key={tab.id} tab={tab} onClick={(e) => selectTab(e, tab.id)} />
-  ))
+  function getChevronIcon(isActive: boolean) {
+    return isActive ? FiChevronUp : FiChevronDown
+  }
+
+  const tabHeadElements = tabs.map((tab) => {
+    if (tab.id === 0) tab.Icon = getChevronIcon(tab.isActive)
+    return (
+      <TabHead key={tab.id} tab={tab} onClick={(e) => selectTab(e, tab.id)} />
+    )
+  })
+
+  const [selectedTabDescription] = tabs.filter((tab) => tab.isActive)
 
   return (
     <div className={adminPanel}>
       <div className={tabHeads}>{tabHeadElements}</div>
-      <p className={tabBody}>Ajouter un produit</p>
+      {selectedTabDescription.label && (
+        <p className={tabBody}>{selectedTabDescription.label}</p>
+      )}
     </div>
   )
 }
 
-const adminPanel = 'h-48 w-full absolute bottom-0'
+const adminPanel = 'w-full absolute bottom-0'
 const tabHeads = 'flex flex-row ml-10'
 const tabBody =
-  'h-full bg-white border border-t-[#E4E5E9] p-4 drop-shadow-admin'
+  'h-48 bg-white border border-t-[#E4E5E9] p-4 drop-shadow-admin  rounded-b-2xl'

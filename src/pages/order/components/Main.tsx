@@ -26,7 +26,6 @@ export function Main() {
   )
 }
 
-const container =
-  'main h-5/6 w-full relative flex flex-col justify-between border border-red-500'
+const container = `h-5/6 w-full relative flex flex-col justify-between rounded-b-2xl`
 const itemListGrid =
-  'w-full h-full bg-white flex shadow pt-8 px-8 grid grid-cols-4 gap-y-2 justify-center overflow-y-scroll'
+  'w-full h-full bg-[#F5F5F7] flex shadow pt-8 px-8 grid grid-cols-4 gap-y-2 justify-center overflow-y-scroll rounded-b-2xl'

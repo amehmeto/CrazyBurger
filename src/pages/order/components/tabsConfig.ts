@@ -4,6 +4,8 @@ import {
   MdModeEditOutline,
 } from 'react-icons/all'
 import { IconType } from 'react-icons'
+import { toast } from 'react-toastify'
+import isActive = toast.isActive
 
 export type TabConfig = {
   id: number
