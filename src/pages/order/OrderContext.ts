@@ -1,22 +1,59 @@
-import { createContext, Dispatch, SetStateAction, useState } from 'react'
-import { TabConfig, tabsConfig } from './components/TabsConfig'
+import { createContext, useState } from 'react'
+import {
+  ArrowTabModel,
+  initialArrowTab,
+  initialTabs,
+  TabViewModel,
+} from './components/InitialTabs'
+import { FiChevronDown, FiChevronUp } from 'react-icons/all'
 
 export function useOrderContextValue() {
   const [isModeAdmin, setIsModeAdmin] = useState<boolean>(false)
-  const [tabs, setTabs] = useState<TabConfig[]>(tabsConfig)
+  const [tabs, setTabs] = useState<TabViewModel[]>(initialTabs)
+  const [arrowTab, setArrowTab] = useState<ArrowTabModel>(initialArrowTab)
 
-  return { isModeAdmin, setIsModeAdmin, tabs, setTabs }
+  function toggleArrowTab() {
+    setArrowTab({
+      ...arrowTab,
+      isOpen: !arrowTab.isOpen,
+      Icon: arrowTab.isOpen ? FiChevronUp : FiChevronDown,
+    })
+  }
+
+  function selectTab(tabId: number) {
+    setTabs((prevTabs) =>
+      prevTabs.map((tab) => ({
+        ...tab,
+        isSelected: tab.id === tabId,
+      })),
+    )
+    if (!arrowTab.isOpen) toggleArrowTab()
+  }
+
+  return {
+    isModeAdmin,
+    setIsModeAdmin,
+    tabs,
+    selectTab,
+    arrowTab,
+    toggleArrowTab,
+  }
 }
+
 interface OrderContextShape {
   isModeAdmin: boolean
-  setIsModeAdmin: (lol: any) => void
-  tabs: TabConfig[]
-  setTabs: Dispatch<SetStateAction<TabConfig[]>>
+  setIsModeAdmin: () => void
+  tabs: TabViewModel[]
+  arrowTab: ArrowTabModel
+  toggleArrowTab: () => void
+  selectTab: (tabId: number) => void
 }
 
 export const OrderContext = createContext<OrderContextShape>({
   isModeAdmin: false,
-  setIsModeAdmin: (lol: any) => {},
-  tabs: tabsConfig,
-  setTabs: () => {},
+  setIsModeAdmin: () => {},
+  tabs: initialTabs,
+  arrowTab: initialArrowTab,
+  toggleArrowTab: () => {},
+  selectTab: () => {},
 })

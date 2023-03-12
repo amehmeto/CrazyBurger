@@ -35,8 +35,8 @@ export function MenuItemCard({ item }: MenuItemsCardProps) {
 
 const MenuItemCardStyled = styled.div`
   margin: 0 auto;
-  height: 300px;
-  width: 200px;
+  width: 240px;
+  height: 330px;
   background-color: ${THEME.colors.white};
   border-radius: ${THEME.borderRadius.extraRound};
   padding: ${THEME.spacing.md};
@@ -47,8 +47,8 @@ const MenuItemCardStyled = styled.div`
   justify-content: end;
 
   img {
-    margin: 0 auto 30px;
-    width: 100%;
+    margin: 0 auto;
+    width: 200px;
     max-height: 145px;
     object-fit: contain;
     flex-grow: 1;
@@ -63,6 +63,7 @@ const MenuItemCardStyled = styled.div`
     font-family: ${THEME.fonts.family.AMATIC_SC};
     font-size: ${THEME.fonts.size.P4};
     font-weight: ${THEME.fonts.weights.bold};
+    margin-top: ${THEME.spacing.md};
   }
 
   .price {

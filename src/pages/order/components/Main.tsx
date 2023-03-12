@@ -28,6 +28,9 @@ export function Main() {
   )
 }
 
-const container = `h-5/6 w-full relative flex flex-col justify-between rounded-b-2xl`
+const container =
+  'h-[85vh] w-full relative flex flex-col justify-between rounded-b-2xl' +
+  ' shadow-[inset_0_-2px_4px_rgba(0,0,0,0.6)]'
+
 const itemListGrid =
-  'w-full h-full bg-[#F5F5F7] flex shadow pt-8 px-8 grid grid-cols-4 gap-y-2 justify-center overflow-y-scroll rounded-b-2xl'
+  'w-full h-full bg-[#F5F5F7] pb-12 shadow pt-8 px-8 grid grid-cols-4 gap-x-18 gap-y-14 justify-center overflow-y-scroll rounded-b-2xl'

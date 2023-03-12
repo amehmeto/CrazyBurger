@@ -7,10 +7,9 @@ import { OrderContext, useOrderContextValue } from './OrderContext'
 
 export function OrderPage() {
   const { firstName } = useParams()
-  const orderContextValue = useOrderContextValue()
 
   return (
-    <OrderContext.Provider value={orderContextValue}>
+    <OrderContext.Provider value={useOrderContextValue()}>
       <OrderPageStyled>
         <div className={'container'}>
           <NavBar firstName={firstName} />

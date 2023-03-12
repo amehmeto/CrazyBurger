@@ -1,31 +1,28 @@
-import React, { MouseEvent } from 'react'
-import { TabConfig } from './TabsConfig'
+import React, { MouseEvent, useContext } from 'react'
+import { ArrowTabModel, TabViewModel } from './InitialTabs'
+import { OrderContext } from '../OrderContext'
 
 type TabHeadProps = {
-  tab: TabConfig
-  onClick: (event: MouseEvent<HTMLButtonElement>) => void
+  tab: TabViewModel
 }
 
 export function TabHead({
-  tab: { Icon, label, ariaLabel, isActive },
-  onClick,
+  tab: { id, Icon, label, isSelected },
 }: TabHeadProps) {
-  const style = isActive ? activeStyle : inactiveStyle
+  const { selectTab } = useContext(OrderContext)
+
+  const isSelectedStyle = isSelected ? activeStyle : inactiveStyle
 
   return (
-    <button
-      className={tabHead + ' ' + style}
-      aria-label={ariaLabel}
-      onClick={(e) => onClick(e)}
-    >
+    <button className={tabHead + isSelectedStyle} onClick={() => selectTab(id)}>
       <Icon className={tabIcon} />
-      {label && <span className={labelStyle}>{label}</span>}
+      <span className={labelStyle}>{label}</span>
     </button>
   )
 }
 
-const inactiveStyle = 'border-[#E4E5E9] bg-white text-[#93A2B1]'
-const activeStyle = 'border-[#292729] bg-[#292729] text-white'
+const inactiveStyle = ' border-[#E4E5E9] bg-white text-[#93A2B1]'
+const activeStyle = ' border-[#292729] bg-[#292729] text-white'
 
 const tabHead =
   'flex gap-5 items-center justify-between px-6 py-3 mr-1 border  rounded-t-md'

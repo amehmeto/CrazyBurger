@@ -21,6 +21,7 @@ export function NavBar({ firstName }: NavBarProps) {
 }
 const NavbarStyled = styled.nav`
   background-color: ${THEME.colors.white};
+  border-bottom: ${THEME.colors.greyLight} 1px solid;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
