@@ -1,5 +1,5 @@
-import React, { MouseEvent, useContext } from 'react'
-import { ArrowTabModel, TabViewModel } from './InitialTabs'
+import React, { useContext } from 'react'
+import { TabViewModel } from './InitialTabs'
 import { OrderContext } from '../OrderContext'
 
 type TabHeadProps = {
@@ -9,9 +9,10 @@ type TabHeadProps = {
 export function TabHead({
   tab: { id, Icon, label, isSelected },
 }: TabHeadProps) {
-  const { selectTab } = useContext(OrderContext)
+  const { selectTab, arrowTab } = useContext(OrderContext)
 
-  const isSelectedStyle = isSelected ? activeStyle : inactiveStyle
+  const isSelectedStyle =
+    isSelected && arrowTab.isOpen ? activeStyle : inactiveStyle
 
   return (
     <button className={tabHead + isSelectedStyle} onClick={() => selectTab(id)}>

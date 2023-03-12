@@ -6,11 +6,11 @@ import { ArrowTab } from './ArrowTab'
 export function AdminPanel() {
   const { tabs, arrowTab } = useContext(OrderContext)
 
+  const [selectedTab] = tabs.filter((tab) => tab.isSelected)
+
   const tabHeadElements = tabs.map((tab) => {
     return <TabHead key={tab.id} tab={tab} />
   })
-
-  const [selectedTab] = tabs.filter((tab) => tab.isSelected)
 
   return (
     <div className={adminPanel}>

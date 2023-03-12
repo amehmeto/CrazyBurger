@@ -5,7 +5,7 @@ export function ArrowTab() {
   const { arrowTab, toggleArrowTab } = useContext(OrderContext)
   const { Icon, ariaLabel, isOpen } = arrowTab
 
-  const style = isOpen ? activeStyle : inactiveStyle
+  const style = isOpen ? inactiveStyle : activeStyle
 
   return (
     <button
@@ -20,8 +20,6 @@ export function ArrowTab() {
 
 const inactiveStyle = 'border-[#E4E5E9] bg-white text-[#93A2B1]'
 const activeStyle = 'border-[#292729] bg-[#292729] text-white'
-
 const tabHead =
   'flex gap-5 items-center justify-between px-6 py-3 mr-1 border  rounded-t-md'
-
 const tabIcon = 'text-base'

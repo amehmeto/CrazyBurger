@@ -13,7 +13,7 @@ type RightSideNavbarProps = {
 }
 
 export function RightSideNavbar({ firstName }: RightSideNavbarProps) {
-  const { isModeAdmin, setIsModeAdmin } = useContext(OrderContext)
+  const { isModeAdmin, openAdminMode } = useContext(OrderContext)
   function notifyEnteredAdminMode() {
     const notificationMessage = 'Mode admin activé'
     const options = {
@@ -31,7 +31,7 @@ export function RightSideNavbar({ firstName }: RightSideNavbarProps) {
 
   function activateAdminMode() {
     if (!isModeAdmin) notifyEnteredAdminMode()
-    setIsModeAdmin(!isModeAdmin)
+    openAdminMode()
   }
 
   return (

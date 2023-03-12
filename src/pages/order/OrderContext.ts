@@ -30,6 +30,11 @@ export function useOrderContextValue() {
     if (!arrowTab.isOpen) toggleArrowTab()
   }
 
+  function openAdminMode() {
+    setIsModeAdmin(!isModeAdmin)
+    if (!arrowTab.isOpen) toggleArrowTab()
+  }
+
   return {
     isModeAdmin,
     setIsModeAdmin,
@@ -37,12 +42,13 @@ export function useOrderContextValue() {
     selectTab,
     arrowTab,
     toggleArrowTab,
+    openAdminMode,
   }
 }
 
 interface OrderContextShape {
   isModeAdmin: boolean
-  setIsModeAdmin: () => void
+  openAdminMode: () => void
   tabs: TabViewModel[]
   arrowTab: ArrowTabModel
   toggleArrowTab: () => void
@@ -51,7 +57,7 @@ interface OrderContextShape {
 
 export const OrderContext = createContext<OrderContextShape>({
   isModeAdmin: false,
-  setIsModeAdmin: () => {},
+  openAdminMode: () => {},
   tabs: initialTabs,
   arrowTab: initialArrowTab,
   toggleArrowTab: () => {},
