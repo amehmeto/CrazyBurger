@@ -4,21 +4,21 @@ import { THEME } from '../design-system'
 
 type TextInputProps = {
   onChange?: (e: React.FormEvent<HTMLInputElement>) => void
-  icon?: JSX.Element
+  Icon?: JSX.Element
   name?: string
   placeholder?: string
   required: boolean
 }
 export function TextInput({
   onChange,
-  icon,
+  Icon,
   name,
   placeholder,
   required,
 }: TextInputProps) {
   return (
     <TextInputStyled>
-      {icon}
+      {Icon}
       <input
         type="text"
         name={name}
@@ -35,21 +35,10 @@ const TextInputStyled = styled.div`
   display: flex;
   align-items: center;
 
-  padding: ${THEME.spacing.md} ${THEME.spacing.md};
-
-  .icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: ${THEME.fonts.size.P0};
-    color: ${THEME.colors.greySemiDark};
-    margin-right: ${THEME.spacing.xs};
-  }
+  padding: ${THEME.spacing.md} ${THEME.spacing.lg};
 
   input {
-    font-size: ${THEME.fonts.size.P0};
     color: ${THEME.colors.dark};
-    border: none;
     width: 100%;
 
     &::placeholder {

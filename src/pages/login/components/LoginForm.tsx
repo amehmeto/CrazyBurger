@@ -25,9 +25,9 @@ export function LoginForm() {
 
       <form onSubmit={accessPrivateSpace}>
         <TextInput
+          Icon={<BsPersonCircle className={iconStyle} />}
           name="firstName"
           placeholder="Entrez votre prénom..."
-          icon={<BsPersonCircle className="icon" />}
           required
         />
         <br />
@@ -39,6 +39,9 @@ export function LoginForm() {
     </LoginFormStyled>
   )
 }
+
+const iconStyle =
+  'flex justify-center self-center mr-4 text-base text-[#93a2b1]'
 
 const LoginFormStyled = styled.div`
   width: 500px;
